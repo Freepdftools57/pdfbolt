@@ -7,6 +7,14 @@ import JSZip from "jszip";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob, uint8ToArrayBuffer } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "Can I extract specific pages from a PDF?", answer: "Yes. Use the 'By page ranges' mode and enter the pages you want, like '1-3, 7, 10-12'. You'll get a new PDF with only those pages." },
+  { question: "What happens when I split into multiple parts?", answer: "If you define multiple ranges (e.g. '1-3, 4-6'), PDFBolt creates separate PDF files and packages them in a ZIP download." },
+  { question: "Does splitting affect the quality of my PDF?", answer: "No. Pages are copied exactly as they are. No re-encoding or quality loss occurs during the split." },
+  { question: "Is my PDF uploaded to a server?", answer: "No. All processing is done locally in your browser. Your file never leaves your device." },
+];
 
 type SplitMode = "ranges" | "each";
 
@@ -204,6 +212,8 @@ export default function SplitPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

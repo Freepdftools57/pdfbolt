@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob, formatFileSize } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "How does PDF compression work in the browser?", answer: "PDFBolt rebuilds the PDF structure, removing unused objects, duplicate data, and metadata bloat. This reduces file size without altering the visible content of your pages." },
+  { question: "Will compressing my PDF reduce image quality?", answer: "No. PDFBolt's compression strips unnecessary data from the file structure. It does not re-encode or downsample images, so visual quality is preserved." },
+  { question: "Is there a file size limit?", answer: "There's no hard limit, but very large files (over 100MB) may be slow to process depending on your device. All processing happens locally on your computer." },
+  { question: "Are my files uploaded to a server?", answer: "No. Everything runs in your browser. Your PDF never leaves your device — there's no upload, no server processing, and no data collection." },
+];
 
 export default function CompressPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -153,6 +161,8 @@ export default function CompressPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

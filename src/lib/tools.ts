@@ -142,4 +142,26 @@ export const tools: Tool[] = [
     seoDescription:
       "Rearrange PDF pages in any order for free. Drag and drop to reorder — all in your browser.",
   },
+  {
+    id: "sign",
+    name: "Sign PDF",
+    description: "Draw or type a signature on your PDF",
+    icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z",
+    href: "/sign",
+    color: "text-indigo-400",
+    seoTitle: "Sign PDF Online — Free & Private",
+    seoDescription:
+      "Add your signature to PDF documents for free. Draw or type your signature — all processed in your browser.",
+  },
+  {
+    id: "add-text",
+    name: "Add Text to PDF",
+    description: "Insert text anywhere on your PDF pages",
+    icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+    href: "/add-text",
+    color: "text-lime-400",
+    seoTitle: "Add Text to PDF — Free & Private",
+    seoDescription:
+      "Add text to PDF files for free. Place text anywhere on any page — processed entirely in your browser.",
+  },
 ];

@@ -5,7 +5,15 @@ import { PDFDocument } from "pdf-lib";
 import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
+import { Faq } from "@/components/faq";
 import { uint8ToBlob, formatFileSize } from "@/lib/pdf-utils";
+
+const faqItems = [
+  { question: "Is it safe to merge PDFs here?", answer: "Yes. Your files are processed entirely in your browser using JavaScript. Nothing is uploaded to any server. Your documents never leave your device." },
+  { question: "Is there a limit on the number of files I can merge?", answer: "No. You can merge as many PDF files as you want, for free. The only limit is your device's available memory." },
+  { question: "Will the merged PDF lose quality?", answer: "No. PDFBolt copies pages exactly as they are. No re-encoding or compression is applied — the output quality is identical to the originals." },
+  { question: "Can I reorder the files before merging?", answer: "Yes. Use the up and down arrows next to each file to rearrange them in the order you want before merging." },
+];
 
 interface PdfFile {
   id: string;
@@ -193,6 +201,8 @@ export default function MergePage() {
           )}
         </div>
       )}
+
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }
