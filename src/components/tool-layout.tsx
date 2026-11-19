@@ -1,3 +1,5 @@
+import { ToolJsonLd } from "@/components/json-ld";
+
 interface ToolLayoutProps {
   title: string;
   description: string;
@@ -7,6 +9,11 @@ interface ToolLayoutProps {
 export function ToolLayout({ title, description, children }: ToolLayoutProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
+      <ToolJsonLd
+        name={`${title} — PDFBolt`}
+        description={description}
+        url={`https://pdfbolt-gamma.vercel.app`}
+      />
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold mb-2">{title}</h1>
         <p className="text-muted max-w-xl mx-auto">{description}</p>

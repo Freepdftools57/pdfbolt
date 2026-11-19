@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { tools } from "@/lib/tools";
+import { WebsiteJsonLd } from "@/components/json-ld";
 
 export default function Home() {
   return (
     <>
+      <WebsiteJsonLd />
       {/* Hero */}
       <section className="text-center py-16 md:py-24 px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
