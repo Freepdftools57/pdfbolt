@@ -2,7 +2,7 @@ import { tools } from "@/lib/tools";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://pdfbolt.vercel.app";
+  const baseUrl = "https://pdfbolt-gamma.vercel.app";
 
   return [
     {

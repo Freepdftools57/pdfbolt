@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://pdfbolt.vercel.app/sitemap.xml",
+    sitemap: "https://pdfbolt-gamma.vercel.app/sitemap.xml",
   };
 }
