@@ -76,4 +76,37 @@ export const tools: Tool[] = [
     seoDescription:
       "Rotate PDF pages online for free. Rotate individual pages or all pages at once. 100% browser-based.",
   },
+  {
+    id: "watermark",
+    name: "Watermark PDF",
+    description: "Add text watermarks to your PDF pages",
+    icon: "M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z",
+    href: "/watermark",
+    color: "text-yellow-400",
+    seoTitle: "Add Watermark to PDF — Free & Private",
+    seoDescription:
+      "Add text watermarks to PDF pages for free. Customize text, size, color, and opacity. 100% browser-based.",
+  },
+  {
+    id: "page-numbers",
+    name: "Page Numbers",
+    description: "Add page numbers to your PDF document",
+    icon: "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+    href: "/page-numbers",
+    color: "text-teal-400",
+    seoTitle: "Add Page Numbers to PDF — Free & Private",
+    seoDescription:
+      "Add page numbers to PDF documents for free. Choose position, format, and starting number. All in your browser.",
+  },
+  {
+    id: "protect",
+    name: "Protect PDF",
+    description: "Add password protection to your PDF",
+    icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+    href: "/protect",
+    color: "text-red-400",
+    seoTitle: "Password Protect PDF — Free & Private",
+    seoDescription:
+      "Add password protection to PDF files for free. Encrypt your documents directly in your browser.",
+  },
 ];
