@@ -3,6 +3,14 @@
 import { useState, useCallback } from "react";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "What kind of text can be extracted?", answer: "PDFBolt extracts all selectable text from your PDF. This includes text from documents, forms, and reports. It cannot extract text from scanned images (OCR is not supported)." },
+  { question: "Can I copy the extracted text?", answer: "Yes. You can copy all extracted text to your clipboard with one click, or download it as a .txt file." },
+  { question: "Does it preserve formatting?", answer: "The text is extracted as plain text. Page breaks are marked with page numbers. Original formatting like fonts, colors, and layout is not preserved." },
+  { question: "Is my file processed locally?", answer: "Yes. Text extraction runs entirely in your browser. Your PDF never leaves your device." },
+];
 
 export default function ExtractTextPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -138,6 +146,7 @@ export default function ExtractTextPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

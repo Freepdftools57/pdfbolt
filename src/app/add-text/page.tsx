@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "What fonts are available?", answer: "Three fonts: Helvetica (clean, modern), Courier (monospace, typewriter-style), and Times (classic serif). Font size can be adjusted from 8 to 48 points." },
+  { question: "How do I position the text?", answer: "Use the X and Y coordinates in PDF points. The origin (0,0) is the bottom-left corner of the page. A standard A4 page is about 595 x 842 points." },
+  { question: "Can I add text to multiple pages?", answer: "Currently, text is added to one page at a time. Select the target page number before adding your text." },
+  { question: "Is my file processed locally?", answer: "Yes. All text insertion happens in your browser. Your PDF never leaves your device." },
+];
 
 type FontChoice = "helvetica" | "courier" | "times";
 
@@ -187,6 +195,7 @@ export default function AddTextPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "What signature types are supported?", answer: "You can either draw your signature using your mouse or touchscreen, or type your name which will be rendered in a handwriting-style font." },
+  { question: "Can I choose where the signature appears?", answer: "The signature is placed in the bottom-right corner of the page you select. Choose the target page number before signing." },
+  { question: "Is this a legally binding signature?", answer: "PDFBolt adds a visual signature to the PDF. For legally binding digital signatures with certificates, you would need specialized signing software." },
+  { question: "Is my document processed securely?", answer: "Yes. All processing happens in your browser. Your PDF and signature never leave your device." },
+];
 
 type SignMode = "draw" | "type";
 
@@ -270,6 +278,7 @@ export default function SignPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

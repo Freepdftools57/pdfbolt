@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "How do I reorder pages?", answer: "After uploading your PDF, you'll see all pages listed with up and down arrows. Use the arrows to move pages to their desired position." },
+  { question: "Can I see which pages have been moved?", answer: "Yes. If a page has been moved from its original position, the original position number is shown below the page label in blue." },
+  { question: "Does reordering affect page content?", answer: "No. Pages are copied exactly as they are. Only the order changes — no content is modified." },
+  { question: "Is my file processed locally?", answer: "Yes. All reordering happens in your browser. Your file never leaves your device." },
+];
 
 interface PageItem {
   originalIndex: number;
@@ -156,6 +164,7 @@ export default function ReorderPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

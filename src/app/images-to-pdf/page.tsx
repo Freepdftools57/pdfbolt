@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob, formatFileSize } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "What image formats are supported?", answer: "You can upload PNG, JPG, and WebP images. WebP images are automatically converted to JPEG for PDF compatibility." },
+  { question: "Can I choose the page size?", answer: "Yes. You can choose 'Fit to image' (page matches image dimensions), A4, or Letter size. For A4 and Letter, images are centered and scaled to fit with margins." },
+  { question: "Can I reorder images before converting?", answer: "Yes. Hover over any image and use the left/right arrows to rearrange the order. The images will appear in this order in the final PDF." },
+  { question: "Is there a limit on the number of images?", answer: "No. You can add as many images as you want. The only limit is your device's available memory." },
+];
 
 interface ImageFile {
   id: string;
@@ -247,6 +255,7 @@ export default function ImagesToPdfPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

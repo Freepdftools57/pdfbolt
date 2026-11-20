@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "Can I rotate specific pages only?", answer: "Yes. Switch to 'Specific pages' mode and enter the page numbers you want to rotate, like '1, 3-5'. The rest of the pages will remain unchanged." },
+  { question: "What rotation angles are available?", answer: "You can rotate by 90° (clockwise), 180° (upside down), or 270° (counter-clockwise). The rotation is applied on top of any existing rotation." },
+  { question: "Does rotation affect the content quality?", answer: "No. The page is rotated without re-encoding. All text, images, and formatting remain exactly as they are." },
+  { question: "Is my file uploaded to a server?", answer: "No. All processing happens locally in your browser. Your file stays on your device at all times." },
+];
 
 type RotationAngle = 90 | 180 | 270;
 
@@ -204,6 +212,7 @@ export default function RotatePage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "Where can I place page numbers?", answer: "You can place numbers in six positions: top-left, top-center, top-right, bottom-left, bottom-center, or bottom-right." },
+  { question: "What number formats are available?", answer: "Three formats: standard numbers (1, 2, 3), Roman numerals (i, ii, iii), and dashed format (- 1 -, - 2 -, - 3 -)." },
+  { question: "Can I start numbering from a specific page?", answer: "Yes. Use the 'Start from' field to set any starting number. For example, set it to 3 if you want the first page to show '3'." },
+  { question: "Is my PDF processed locally?", answer: "Yes. Everything runs in your browser. Your file never leaves your device." },
+];
 
 type Position = "bottom-center" | "bottom-left" | "bottom-right" | "top-center" | "top-left" | "top-right";
 type NumberFormat = "numeric" | "roman" | "dashed";
@@ -237,6 +245,7 @@ export default function PageNumbersPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

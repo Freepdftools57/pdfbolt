@@ -5,6 +5,14 @@ import { saveAs } from "file-saver";
 import JSZip from "jszip";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "What image formats can I export to?", answer: "You can export PDF pages as PNG or JPEG images. PNG is lossless and best for text-heavy documents, while JPEG produces smaller files." },
+  { question: "Can I control the image resolution?", answer: "Yes. Use the quality slider to set the rendering scale from 1x (fast, lower resolution) to 4x (HD, higher resolution). Higher scales produce sharper images." },
+  { question: "Is there a page limit?", answer: "No. All pages in your PDF will be converted. They are packaged into a single ZIP file for easy download." },
+  { question: "Are my files uploaded anywhere?", answer: "No. All conversion happens locally in your browser. Your PDF never leaves your device." },
+];
 
 type ImageFormat = "png" | "jpeg";
 
@@ -187,6 +195,7 @@ export default function PdfToImagesPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

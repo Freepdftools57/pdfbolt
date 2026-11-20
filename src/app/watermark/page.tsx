@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "Can I customize the watermark appearance?", answer: "Yes. You can change the text, font size, opacity (5% to 50%), and rotation angle (-90° to 90°). The watermark is placed centered on each page." },
+  { question: "Is the watermark applied to all pages?", answer: "Yes. The watermark text is added to every page in the PDF document with the same settings." },
+  { question: "Can I remove a watermark later?", answer: "Watermarks added by PDFBolt are embedded as text in the PDF. They cannot be easily removed afterward. Make sure to keep your original file." },
+  { question: "Is my file processed locally?", answer: "Yes. All watermarking happens in your browser. No data is sent to any server." },
+];
 
 export default function WatermarkPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -163,6 +171,7 @@ export default function WatermarkPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }

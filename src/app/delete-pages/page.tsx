@@ -6,6 +6,14 @@ import { saveAs } from "file-saver";
 import { ToolLayout } from "@/components/tool-layout";
 import { FileDropZone } from "@/components/file-drop-zone";
 import { uint8ToBlob } from "@/lib/pdf-utils";
+import { Faq } from "@/components/faq";
+
+const faqItems = [
+  { question: "How do I select pages to delete?", answer: "After uploading your PDF, you'll see a grid of page numbers. Click on any page number to mark it for deletion. Click again to deselect. Red highlighted pages will be removed." },
+  { question: "Can I delete all pages?", answer: "No. A PDF must have at least one page. You'll see an error if you try to select all pages for deletion." },
+  { question: "Does this modify my original file?", answer: "No. PDFBolt creates a new PDF without the deleted pages. Your original file remains unchanged on your device." },
+  { question: "Is my file sent to a server?", answer: "No. All processing happens locally in your browser. Your PDF never leaves your device." },
+];
 
 export default function DeletePagesPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -142,6 +150,7 @@ export default function DeletePagesPage() {
           {error && <p className="text-sm text-danger">{error}</p>}
         </div>
       )}
+      <Faq items={faqItems} />
     </ToolLayout>
   );
 }
