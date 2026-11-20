@@ -49,12 +49,38 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold mb-3 text-sm uppercase tracking-wider text-muted">
-              Privacy
+              Info
             </h3>
-            <p className="text-sm text-muted leading-relaxed">
-              Your files are processed 100% locally in your web browser using
-              JavaScript. Nothing is uploaded to any server. We don&apos;t collect,
-              store, or have access to your files.
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-muted hover:text-foreground transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-muted hover:text-foreground transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Freepdftools57/pdfbolt"
+                  className="text-sm text-muted hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
+            <p className="text-sm text-muted leading-relaxed mt-4">
+              Your files are processed 100% locally. Nothing is uploaded to any server.
             </p>
           </div>
         </div>
