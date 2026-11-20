@@ -164,4 +164,37 @@ export const tools: Tool[] = [
     seoDescription:
       "Add text to PDF files for free. Place text anywhere on any page — processed entirely in your browser.",
   },
+  {
+    id: "unlock",
+    name: "Unlock PDF",
+    description: "Remove restrictions from password-protected PDFs",
+    icon: "M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z",
+    href: "/unlock",
+    color: "text-orange-500",
+    seoTitle: "Unlock PDF — Remove Restrictions Free & Private",
+    seoDescription:
+      "Remove password restrictions from PDF files for free. Unlock printing, copying, and editing — all in your browser.",
+  },
+  {
+    id: "word-to-pdf",
+    name: "Word to PDF",
+    description: "Convert Word documents (DOCX) to PDF format",
+    icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+    href: "/word-to-pdf",
+    color: "text-blue-500",
+    seoTitle: "Word to PDF Converter — Free & Private",
+    seoDescription:
+      "Convert Word documents to PDF for free. DOCX to PDF conversion — coming soon, all in your browser.",
+  },
+  {
+    id: "pdf-to-word",
+    name: "PDF to Word",
+    description: "Convert PDF files to editable Word documents",
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+    href: "/pdf-to-word",
+    color: "text-sky-400",
+    seoTitle: "PDF to Word Converter — Free & Private",
+    seoDescription:
+      "Convert PDF files to Word documents for free. PDF to DOCX conversion — coming soon, all in your browser.",
+  },
 ];
